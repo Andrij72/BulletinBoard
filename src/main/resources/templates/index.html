@@ -1,9 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head>
-    <meta charset="UTF-8"/>
-    <title>Main page-bulletin</title>
-    <link th:rel="stylesheet" th:href="@{webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+    <meta charset="ISO-8859-1">
+    <title>Main page</title>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 </head>
 <body>
 <!-- Navigation -->
@@ -35,16 +38,16 @@
 
 <div class="container mt-5 mb-5"> <br>
     <h1><em>Line news</em></h1>
-        <div th:each="el:${page.content}" class="alert alert-info mt-2">
-            <h3 th:text="${el.title}"></h3>
-            <strong th:text="${el.anons}"></strong>
-            <!--<div class="img-container" th:if="${product.filename}">
-                <img th:src="@{el.filename}" height="70" />
-            </div>-->
-            <p th:t="${el.full_text}"></p>
-            <h3 th:text="${el.rg_data}"></h3>
-            <h3 th:text="${el.getAuthor().getLastName()}"></h3>
-         </div>
+    <div th:each="el:${page.content}" class="alert alert-info mt-2">
+        <h3 th:text="${el.title}"></h3>
+        <strong th:text="${el.anons}"></strong>
+        <!--<div class="img-container" th:if="${product.filename}">
+            <img th:src="@{el.filename}" height="70" />
+        </div>-->
+        <p th:t="${el.full_text}"></p>
+        <h3 th:text="${el.rg_data}"></h3>
+        <h3 th:text="${el.getAuthor().getLastName()}"></h3>
+    </div>
 </div>
 
 <!-- customers pagination -->

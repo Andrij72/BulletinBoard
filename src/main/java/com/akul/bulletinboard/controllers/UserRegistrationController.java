@@ -15,8 +15,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/registration")
 public class UserRegistrationController {
 
-    @Autowired
-    private UserService userService;
+    private final UserService userService;
+
+    public UserRegistrationController(UserService userService) {
+        this.userService = userService;
+    }
 
 
     @ModelAttribute("user")
@@ -31,7 +34,7 @@ public class UserRegistrationController {
 
     @PostMapping
     public String registerUserAccount(@ModelAttribute("user") UserRegistrationDto user) {
-       userService.save(user);
+        userService.save(user);
         return "redirect:/registration?success";
     }
 }

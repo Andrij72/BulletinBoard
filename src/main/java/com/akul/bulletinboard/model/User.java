@@ -4,10 +4,7 @@ package com.akul.bulletinboard.model;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
@@ -39,7 +36,7 @@ public class User {
     private String password;
 
     @OneToMany(mappedBy = "author", cascade = CascadeType.ALL)
-    private Set<Post> posts=new HashSet<>();
+    private Set<Post> posts = new HashSet<>();
 
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(
@@ -56,6 +53,16 @@ public class User {
 
     public User(String firstName, String lastName, String email, String password, Collection<Role> roles) {
         super();
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.password = password;
+        this.roles = roles;
+    }
+
+    public User(Long id, String firstName, String lastName, String email, String password, Collection<Role> roles) {
+        super();
+        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -129,7 +136,6 @@ public class User {
 
     @Override
     public int hashCode() {
-
         return Objects.hash(id);
     }
 

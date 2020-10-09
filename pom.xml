@@ -12,7 +12,7 @@
 	<artifactId>bulletin-board</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>bulletin-board</name>
-	<description>This project on Spring Boot, Spring Security, Spring MVC, Tymeleaf stack.</description>
+	<description>This project on Spring Boot, Spring Security, Spring MVC, Thymeleaf stack.</description>
 
 	<properties>
 		<java.version>10</java.version>
@@ -47,6 +47,11 @@
 			<artifactId>spring-boot-devtools</artifactId>
 			<scope>runtime</scope>
 			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>bootstrap</artifactId>
+			<version>4.5.2</version>
 		</dependency>
 		<dependency>
 			<groupId>mysql</groupId>

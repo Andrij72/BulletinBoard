@@ -11,5 +11,5 @@ import com.akul.bulletinboard.model.User;
     public interface UserRepository extends JpaRepository<User, Long>{
         User findUserByEmail(String email);
         User findByLastName(String lastName);
-
+        User existsUserByEmail(String email);
     }

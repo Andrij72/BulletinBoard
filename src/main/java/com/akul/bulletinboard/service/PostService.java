@@ -2,9 +2,8 @@ package com.akul.bulletinboard.service;
 
 import com.akul.bulletinboard.model.Post;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
-import java.awt.print.Pageable;
-import java.util.List;
 
 public interface PostService {
 

@@ -2,25 +2,31 @@ package com.akul.bulletinboard.service;
 
 import com.akul.bulletinboard.model.Post;
 import com.akul.bulletinboard.repository.PostRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-
-import java.awt.print.Pageable;
 
 
 @Service
 public class PostServiceImpl implements PostService {
-    private  PostRepository postRepository;
 
+
+    private final PostRepository postRepository;
+
+    public PostServiceImpl(PostRepository postRepository) {
+       super();
+        this.postRepository = postRepository;
+    }
 
     @Override
     public Page<Post> findAll(Pageable pageable) {
-        return postRepository.findAll((org.springframework.data.domain.Pageable) pageable);
+        return postRepository.findAll(pageable);
     }
 
     @Override
     public void save(Post post) {
-
         postRepository.save(post);
     }
 }

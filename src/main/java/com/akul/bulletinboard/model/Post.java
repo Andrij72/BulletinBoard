@@ -1,12 +1,10 @@
 package com.akul.bulletinboard.model;
 
 
-import javax.persistence.*;
-import java.io.File;
-import java.time.LocalDate;
-import java.util.Base64;
-
 import org.hibernate.validator.constraints.Length;
+
+import javax.persistence.*;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "posts")

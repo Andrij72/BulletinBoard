@@ -9,7 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "roles")
+@Table(name = "role")
 public class Role {
 
     @Id
@@ -23,6 +23,12 @@ public class Role {
 
     public Role(String name) {
         super();
+        this.name = name;
+    }
+
+    public Role(Long id, String name) {
+        super();
+        this.id = id;
         this.name = name;
     }
 

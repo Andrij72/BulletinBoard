@@ -1,11 +1,14 @@
 package com.akul.bulletinboard.service;
 
+
+
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
+
 import java.util.stream.Collectors;
 
-import com.akul.bulletinboard.model.Post;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -18,6 +21,8 @@ import com.akul.bulletinboard.model.Role;
 import com.akul.bulletinboard.model.User;
 import com.akul.bulletinboard.repository.UserRepository;
 import com.akul.bulletinboard.web.dto.UserRegistrationDto;
+
+import javax.websocket.Session;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -37,7 +42,6 @@ public class UserServiceImpl implements UserService {
         User user = new User(registrationDto.getFirstName(),
                 registrationDto.getLastName(), registrationDto.getEmail(),
                 passwordEncoder.encode(registrationDto.getPassword()), Arrays.asList(new Role("ROLE_USER")));
-
         return userRepository.save(user);
     }
 
@@ -57,11 +61,6 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User saveDB(User user) {
-        return userRepository.save(user);
-    }
-
-    @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
         User user = userRepository.findUserByEmail(username);
@@ -74,4 +73,6 @@ public class UserServiceImpl implements UserService {
     private Collection<? extends GrantedAuthority> mapRolesToAuthorities(Collection<Role> roles) {
         return roles.stream().map(role -> new SimpleGrantedAuthority(role.getName())).collect(Collectors.toList());
     }
+
+
 }

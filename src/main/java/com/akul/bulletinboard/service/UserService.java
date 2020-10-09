@@ -1,7 +1,6 @@
 package com.akul.bulletinboard.service;
 
 
-import com.akul.bulletinboard.model.Post;
 import com.akul.bulletinboard.model.User;
 import com.akul.bulletinboard.web.dto.UserRegistrationDto;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -17,5 +16,4 @@ public interface UserService extends UserDetailsService {
 
     List<User> findAll();
 
-    User saveDB(User user);
 }
