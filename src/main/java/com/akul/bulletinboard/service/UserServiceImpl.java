@@ -1,14 +1,10 @@
 package com.akul.bulletinboard.service;
 
 
-
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
-
-import java.util.stream.Collectors;
-
-
+import com.akul.bulletinboard.model.Role;
+import com.akul.bulletinboard.model.User;
+import com.akul.bulletinboard.repository.UserRepository;
+import com.akul.bulletinboard.web.dto.UserRegistrationDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -17,12 +13,10 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.akul.bulletinboard.model.Role;
-import com.akul.bulletinboard.model.User;
-import com.akul.bulletinboard.repository.UserRepository;
-import com.akul.bulletinboard.web.dto.UserRegistrationDto;
-
-import javax.websocket.Session;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class UserServiceImpl implements UserService {

@@ -1,6 +1,0 @@
-spring.datasource.url=jdbc:postgresql://localhost/db
-spring.datasource.username=postgres
-spring.datasource.password=a123123
-spring.jpa.generate-ddl=true
-spring.jpa.show-sql=true
-spring.jpa.hibernate.ddl-auto=create

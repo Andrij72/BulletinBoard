@@ -74,7 +74,7 @@ public class MainController {
     public String EditUserAccount(@ModelAttribute("user") UserRegistrationDto user, Principal principal) {
         User userFromDb = userService.findUserByEmail(principal.getName());
        User upd_user = new User(userFromDb.getId(),  user.getFirstName(), user.getLastName(), user.getEmail(),
-               passwordEncoder.encode(user.getPassword()), Arrays.asList(userFromDb.getRoles().new Role("ROLE_USER")));
+               user.getPassword(), userFromDb.getRoles());
        userRepository.save(upd_user);
         return "cabinet";
     }

@@ -40,7 +40,7 @@
     <h1><em>Line news</em></h1>
     <div th:each="el:${page.content}" class="alert alert-info mt-2">
         <h3 th:text="${el.title}"></h3>
-        <strong th:text="${el.anons}"></strong>
+        <h3 th:text="${el.anons}"></h3>
         <!--<div class="img-container" th:if="${product.filename}">
             <img th:src="@{el.filename}" height="70" />
         </div>-->

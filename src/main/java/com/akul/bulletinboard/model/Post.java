@@ -15,7 +15,7 @@ public class Post {
     private Long id;
     private String title;
     private String anons;
-    @Length(max = 2048, message = "Message too long (more than 2kB)")
+    @Length(max = 4096, message = "Message too long (more than 2kB)")
     private String full_text;
 
     @Lob

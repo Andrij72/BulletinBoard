@@ -1,10 +1,8 @@
 package com.akul.bulletinboard.controllers;
 
 
-import com.akul.bulletinboard.model.User;
 import com.akul.bulletinboard.service.UserService;
 import com.akul.bulletinboard.web.dto.UserRegistrationDto;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;

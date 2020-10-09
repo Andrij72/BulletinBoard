@@ -29,7 +29,7 @@ CREATE TABLE post
     title          VARCHAR(255),
     anons          VARCHAR(255),
     file           BIGINT,
-    full_text      VARCHAR(2048),
+    full_text      VARCHAR(4096),
     reg_date        TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     author         VARCHAR(64),
     user_id        int NOT NULL,
