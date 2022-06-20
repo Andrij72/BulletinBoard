@@ -9,5 +9,5 @@
 - Главная страница
 - Личный кабинет
 
-#Это приложение реализовано в стеке технологий:
-    ##- Maven, Spring boot, Sprring Security c UI: Freemarker tamplate, Bootstrap, HTML.
+# Это приложение реализовано в стеке технологий:
+##  -Maven, Spring boot, Sprring Security c UI: Freemarker tamplate, Bootstrap, HTML.
